@@ -2,7 +2,7 @@ l4.importScripts('src/sw/core.js');
 l4.importScripts('src/sw/fetch.js');
 
 l4.importScripts('babel-core/browser.js');
-l4.importScripts('babel-core/browser-polyfill.js');
+// l4.importScripts('babel-core/browser-polyfill.js');
 
 l4.importScripts('src/sw/transform.js');
 
@@ -32,6 +32,7 @@ l4.importScripts('src/sw/transform.js');
             //modules: 'system'
         }).code;
     }
+    
 
     l4.fetchTask('babel src transform', notBlacklisted, function(event) {
         return l4.parseEvent(event)
@@ -39,7 +40,7 @@ l4.importScripts('src/sw/transform.js');
                 console.log('#+#+##+#+#+++#+#+#+##+#+#+#+#+#+#+#+#+#+#+##++##+#+#+#+');
                 console.log('src transform');
             }))
-            .then(fetch)
+            .then(fetch) // #TODO why let babel retrieve the source here? Should't this happen in the pipline before #JensLincke
             .then(transform(babelTransform));
     });
 })();
