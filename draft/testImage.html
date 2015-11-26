@@ -4,7 +4,7 @@
 <title>ACE in Action</title>
 
 <script src="https://code.jquery.com/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
-<script src="../system.src.js" type="text/javascript" charset="utf-8"></script>
+<script src="../src/external/system.src.js" type="text/javascript" charset="utf-8"></script>
 <script>
   System.config({
     // or 'traceur' or 'typescript'
@@ -14,14 +14,14 @@
         //modules: "amd"
     },
     map: {
-        babel: '../babel-core/browser.js'
+        babel: '../src/external/babel-browser.js'
     }
   });
 </script>
 </head>
 <body>
 <h1>Test Github Fetch with Image</h1>
-<img src="https://github.lively4/repo/livelykernel/lively4-core/gh-pages/media/meta.png" id="image">no meta  image</img>
+<img src="https://github.lively4/repo/livelykernel/lively4-core/gh-pages/draft/meta.png" id="image">no meta  image</img>
 
 <script>
     System.import("load.js").then(log);
